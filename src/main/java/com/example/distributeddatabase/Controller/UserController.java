@@ -18,14 +18,6 @@ public class UserController {
     private final UserService service;
 
 
-    private final StudentService studentService;
-
-    @GetMapping("/getStudents")
-    public List<Student> getAllStudents(){
-        return studentService.getStudents();
-    }
-
-
     @GetMapping("/getAllUsers")
     public List<User> getAllUsers() {
 

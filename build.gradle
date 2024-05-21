@@ -2,6 +2,8 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.4'
+
+
 }
 
 group = 'com.example'
@@ -22,6 +24,8 @@ dependencies {
 
 	//dependencies for hazelcast
 	implementation 'com.hazelcast:hazelcast:4.2.8'
+
+
 	implementation 'com.hazelcast:hazelcast-spring'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

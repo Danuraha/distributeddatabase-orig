@@ -3,6 +3,7 @@ package com.example.distributeddatabase.Service;
 
 import com.example.distributeddatabase.Repository.UserRepository;
 import com.example.distributeddatabase.Model.User;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -11,13 +12,13 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@RequiredArgsConstructor
 @Service
 @Slf4j
 public class UserService {
 
-    @Autowired
-    private UserRepository repository;
+
+    private final UserRepository repository;
 
 
     @Cacheable(cacheNames = { "userCache" })
@@ -45,12 +46,12 @@ public class UserService {
     @CacheEvict(value = "userCache", allEntries = true)
     public void refreshCache() {
 
-        log.info("User Cache refreshed manually!");
+//        log.info("User Cache refreshed manually!");
     }
 
     // Scheduled cache refresh every 60 seconds
     @CacheEvict(value = "userCache", allEntries = true)
-    @Scheduled(fixedRate = 60000)  // 60 seconds in milliseconds
+    @Scheduled(fixedRate = 120000)  // 60 seconds in milliseconds
     public void scheduledCacheRefresh() {
         try {
             refreshCache();

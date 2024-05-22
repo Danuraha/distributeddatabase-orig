@@ -83,13 +83,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //
 
 
-
-
-
-
-
-
-
 @Configuration
 @EnableScheduling
 public class CacheConfig {
@@ -117,7 +110,8 @@ public class CacheConfig {
                 .addMember("192.168.8.119:5701") // Replace with IP/hostname:port of another machine
                 .addMember("192.168.8.181:5701") // Replace with IP/hostname:port of another machine
                 .addMember("192.168.8.119:5702") // Add more addresses as needed (different ports)
-                .addMember("192.168.8.119:5703") ;// Replace with IP/hostname:port of another machine
+                .addMember("192.168.8.119:5703") // Replace with IP/hostname:port of another machine
+                .addMember("192.168.8.119:5704") ;// Replace with IP/hostname:port of another machine
 
 
         // (Optional) Disable multicast (if using TCP/IP join)

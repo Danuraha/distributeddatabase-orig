@@ -51,7 +51,7 @@ public class UserService {
 
     // Scheduled cache refresh every 60 seconds
     @CacheEvict(value = "userCache", allEntries = true)
-    @Scheduled(fixedRate = 120000)  // 60 seconds in milliseconds
+    @Scheduled(fixedRate = 160000)  // 60 seconds in milliseconds
     public void scheduledCacheRefresh() {
         try {
             refreshCache();

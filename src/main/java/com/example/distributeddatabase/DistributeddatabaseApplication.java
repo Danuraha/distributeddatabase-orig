@@ -24,7 +24,7 @@ public class DistributeddatabaseApplication  {
 		HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance();
 
 
-		Map<Integer, String> map = hazelcastInstance.getMap("customers");
+		Map<Integer, String> map = hazelcastInstance.getMap("userCache");
 		map.put(3, "danu");
 		map.put(4, "seshu");
 		map.put(5, "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
